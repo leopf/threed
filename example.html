@@ -1,26 +1,33 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>3d design system</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Design System Demo</title>
+    <link rel="stylesheet" href="threed.css" type="text/css" />
+    <script src="threed.js"></script>
     <style>
       body {
         background-color: black;
         padding: 5rem;
       }
+
+      /* Customizing the 3D block */
+      .demo {
+        --threed-color-right: #ff8c00;
+        --threed-color-bottom: #cc7000;
+      }
     </style>
-    <link rel="stylesheet" href="threed.css" type="text/css" />
   </head>
   <body>
-    <div class="threed-active">
-      <div class="threed-wrapper" style2="height: 30rem; width: 40rem">
-        <div class="threed-content">
-          <h1>Hello world</h1>
+    <div class="threed-active demo">
+      <threed-element>
+        <div style="padding: 0.1rem 1rem">
+          <h1>threed</h1>
+          <b>simple 3d web styling</b>
+          <p>Press me!</p>
         </div>
-        <div class="threed-bottom threed-viz"></div>
-        <div class="threed-top threed-viz"></div>
-        <div class="threed-right threed-viz"></div>
-        <div class="threed-left threed-viz"></div>
-      </div>
+      </threed-element>
     </div>
   </body>
 </html>

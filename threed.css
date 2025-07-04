@@ -3,7 +3,6 @@
   --threed-rot-y: -0.1deg;
 
   --threed-active-depth: 150rem;
-  --threed-active-transition-duration: 0.05s;
 
   --threed-depth: 200rem;
   --threed-color-top: #ddd;
@@ -12,51 +11,7 @@
   --threed-color-right: #ccc;
   --threed-color-content: white;
 }
-.threed-wrapper {
-  position: relative;
-  transform-style: preserve-3d;
-  transform: rotateX(var(--threed-rot-x)) rotateY(var(--threed-rot-y));
-}
-.threed-content {
-  background-color: var(--threed-color-content);
-}
-.threed-viz {
-  position: absolute;
-  user-select: none;
-  transform-origin: 0 0;
-}
-.threed-right {
-  bottom: 0;
-  left: 100%;
-  width: var(--threed-depth);
-  height: 100%;
-  background-color: var(--threed-color-right);
-  transform: rotateY(90deg);
-}
-.threed-left {
-  bottom: 0;
-  left: 0;
-  width: var(--threed-depth);
-  height: 100%;
-  background-color: var(--threed-color-left);
-  transform: rotateY(90deg);
-}
-.threed-bottom {
-  top: 100%;
-  right: 0;
-  height: var(--threed-depth);
-  width: 100%;
-  background-color: var(--threed-color-bottom);
-  transform: rotateX(-90deg);
-}
-.threed-top {
-  top: 0;
-  right: 0;
-  height: var(--threed-depth);
-  width: 100%;
-  background-color: var(--threed-color-top);
-  transform: rotateX(-90deg);
-}
+
 .threed-active:active {
   transform: translate(
     calc(
@@ -69,15 +24,6 @@
     )
   );
 }
-.threed-active:active .threed-viz {
+.threed-active:active threed-element {
   --threed-depth: var(--threed-active-depth);
-}
-
-.threed-active .threed-viz {
-  transition:
-    width var(--threed-active-transition-duration),
-    height var(--threed-active-transition-duration);
-}
-.threed-active {
-  transition: transform var(--threed-active-transition-duration);
 }
